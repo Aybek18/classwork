@@ -1,0 +1,69 @@
+zadaniye1
+-- CREATE TABLE inner_flights(id SERIAL PRIMARY KEY, from_regions VARCHAR(255), to_destination VARCHAR, company VARCHAR, quantity INT);
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Bishkek', 'Osh', 'Pegasus', 100) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Osh', 'Bishkek', 'Pegasus', 50) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Bishkek', 'Tamchy', 'Pegasus', 22) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Bishkek', 'Jalal-Abad', 'Pegasus', 10) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Osh', 'Batken', 'Pegasus', 133) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Bishkek', 'Talas', 'Pegasus', 44) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Bishkek', 'Naryn', 'Pegasus', 103) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Naryn', 'Osh', 'Pegasus', 56) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Jalal-Abad', 'Osh', 'Pegasus',99) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Batken', 'Bishkek', 'Pegasus', 60) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Tamchy', 'Osh', 'Pegasus', 50) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Talas', 'Tamchy', 'Pegasus', 88) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Bishkek', 'Talas', 'Pegasus', 30) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Tamchy', 'Bishkek', 'Pegasus', 122) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Bishkek', 'Osh', 'Pegasus', 40) ;
+-- INSERT into inner_flights(from_regions, to_destination, company, quantity) VALUES ('Naryn', 'Batken', 'Pegasus', 133) ;
+
+-- CREATE TABLE outer_flights(id SERIAL PRIMARY KEY, from_country VARCHAR, to_country VARCHAR, flight_type VARCHAR, company VARCHAR, neighbors INT);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Amsterdam', 'Paris', 'passenger', 'Qatar Airlines', 5);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Istambul', 'Bishkek', 'cargo', 'Turkish Airlines', 6);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('London', 'Moscow', 'cargo', 'Qatar Airlines', 3);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Osh', 'London', 'passenger', 'Turkish Airlines', 7);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Antalya', 'Riga', 'cargo', 'Qatar Airlines', 3);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Ankara', 'Washington', 'passenger', 'Qatar Airlines', 2);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Damask', 'Barcelona', 'passenger', 'Turkish Airlines', 8);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Amst', 'Madrid', 'cargo', 'Qatar Airlines', 5);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Rio de Janeyro', 'Saint-Petersburg', 'cargo', 'Qatar Airlines', 3);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Washington', 'Madrid', 'cargo', 'Qatar Airlines', 6);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Milan', 'Milan', 'passenger', 'Turkish Airlines', 8);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Brugge', 'Budaphest', 'cargo', 'Qatar Airlines', 1);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Berlin', 'Osh', 'cargo', 'Turkish Airlines', 9);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Riga', 'Astana', 'passenger', 'Turkish Airlines', 4);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Bishkek', 'Beijing', 'cargo', 'Turkish Airlines', 5);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Moscow', 'Mumbai', 'passenger', 'Qatar Airlines', 3);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Madrid', 'Tehran', 'cargo', 'Turkish Airlines', 1);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('Barcelona', 'Damask', 'cargo', 'Turkish Airlines', 3);
+-- INSERT into outer_flights(from_country, to_country, flight_type,company, neighbors) VALUES ('PAris', 'Tashkent', 'passenger', 'Qatar Airlines', 7);
+
+-- 2) select * from outer_flights;
+-- 3) select* from inner_flights where id>10;
+-- 4) select * from inner_flights where from_regions= 'Osh' or to_destination= 'Bishkek';
+-- 5) select * from inner_flights where quantity>50;
+-- 6) select * from outer_flights where company= 'Qatar Airlines' and flight_type='cargo' or company= 'Turkish Airlines'  and flight_type='cargo';
+-- 7) select * from outer_flights where id<7;
+-- 8) select company from outer_flights;
+-- 9) select neighbors from outer_flights where neighbors>6;
+-- 10) select * from outer_flights where neighbors<6 and flight_type='passenger';
+-- 11) select company, to_country from outer_flights;
+zadaniye2
+
+-- CREATE TABLE students(id SERIAL PRIMARY KEY, name VARCHAR, age INT, fp_language VARCHAR, sp_language VARCHAR);
+-- INSERT into students(name, age, fp_language, sp_language) VALUES ('Bakyt', 23, 'Python','С++');
+-- INSERT into students(name, age, fp_language, sp_language) VALUES ('Aygul', 46, 'Python','Java');
+-- INSERT into students(name, age, fp_language, sp_language) VALUES ('Jika', 13, 'C','Ruby_On_Rails');
+-- INSERT into students(name, age, fp_language, sp_language) VALUES ('Ermek', 16,'Java','С');
+-- INSERT into students(name, age, fp_language, sp_language) VALUES ('Artem', 55, 'C#','Java');
+-- INSERT into students(name, age, fp_language, sp_language) VALUES ('Roma', 31, 'Pascal','С');
+-- INSERT into students(name, age, fp_language, sp_language) VALUES ('Beka', 25, 'C#','JavaScript');
+
+-- -- 1) select * from students;
+-- -- 2) select age from students where age>30;
+-- -- 3) select * from students where fp_language='Python' or fp_language='C#';
+-- 4) select * from students where fp_language='Python' and sp_language='C#' or fp_language='C#' and sp_language='Java' or sp_language='Java' and fp_language='C#';
+-- 5) delete from students where id=1 or id=3 or id=5 or id=7;
+-- 6) select name from students where age= (select MIN(age) from students);
+-- 7) DROP TABLE students;
+-- 8) DROP DATABASE programmers;
