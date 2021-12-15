@@ -1,0 +1,42 @@
+Посчитайте количество записей
+Сколько followerОВ у самого знаменитого пользователя
+Напишите запрос, который выводит всю информацию самого знаменитого пользователя
+Найдите среднее количество подписчиков
+Отсортируйте всех пользователей по логину
+Отсортируйте всех пользователей по стране
+Отсортируйте всех пользователей по email
+Напишите запрос,который выводит id из колонки пользователей и имя из колонки clients
+Напишите запрос,который выводит всё о пользователе, чей логин содержит as, cg, si, am, qwe, er, ka, an
+Напишите запрос,который выводит всё о пользователе, чей логин заканчивается на lol, kan, ck, ie. ig
+Напишите запрос, который выводит всё о пользователе, чей логин начинается на a, b, c, d, M, D, A
+12.Как зовут самого знаменитого Сеньор Программиста(Senior Programmer) из Израиля(Israel)?
+1)select count(*) from users;
+2)select max(followers) from users;
+3)select* from users where followers= (select max(followers) from users);
+4)select avg(followers) from users;
+5)select * from users order by login;
+6)select * from users order by country;
+7)select * from users order by email;
+8)select  user_id, login from users;
+9)SELECT * FROM users WHERE login LIKE '%as%' or login LIKE '%cg%' or login LIKE '%si%' or login LIKE '%am%' or login LIKE '%qwe%' or login LIKE '%er%' or login LIKE '%ka%' or login LIKE '%an%';
+#OR select * from users where login ~'(as|cg|si|am|qwe|erka|an)';
+10)SELECT * FROM users WHERE login LIKE '%lol' or login LIKE '%kan' or login LIKE '%ck' or login LIKE '%ie' or login LIKE '%ig';
+11)SELECT * FROM users WHERE login LIKE 'a%' or login LIKE 'b%' or login LIKE 'c%' or login LIKE 'd%' or login LIKE 'M%' or login LIKE 'D%' or login LIKE 'A%';
+12)select * from users where  country='Jordan' and profession='Senior Programmer' and followers=(select max(followers) from users); ?????
+
+1)Выведите на экран всех пользователей у кого пустая почта.
+2)Посчитайте сколько пользователей у которых нет email живут на Chui.
+3)Покажите имена и номера телефонов всех людей которые работают как Web Developer
+4) У всех пользователей у которых почта ровняется False обновите почту на user@gmail.com.
+5)Узнайте из каких стран люди которые не имею работы(Unemployed).
+6)Везде где номер телефона начинается с 000 замените его любой РЕАЛЬНЫЙ номер в формате столбца phone_number.
+7)12345, user123б, qwerty считается лёгкими паролями у каждого пользователя у кого лёгкий пароль удалите из Базы Данных.
+8)Выведите на экран email всех .NET Developer разработчиков и отсортируйте их по Имени.
+1)select * from users where email='';
+2)select * from users where email='' and address='Chuy'
+3)select login, phone_number from users where profession='Web Developer';
+4)update users set email='user@gmail.com' where email='user123@mail.ru';
+5)select login,country from users where profession='IT Coordinator';
+6)update users set phone_number=+996702443223 where phone_number LIKE '%070';
+7) delete from users where password='qwerty' or password='12345' or password='user123б';
+8)select * from users where profession='Web Developer' order by login;
